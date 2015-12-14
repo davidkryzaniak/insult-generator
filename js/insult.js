@@ -9,14 +9,19 @@
 
 	$.getJSON( "api/list_all_words.json", function( data ) {
 
-		//@todo some fucking test would nice here.
-		console.log(data);
+		//@todo some fucking tests/validation would nice here.
+		//console.log(data);
 
 		cussing = data.cussing;
 		fuckAssNoun = data.fuckAssNoun;
 		fuckingDescriptions = data.fuckingDescriptions;
 
 	}).done(function(){
+
+		// show the damn button after the bitchin json request
+		$( '#loading-shit' ).remove();
+		$( '#main-shit' ).show();
+
 		// On [finished] load[ing] bitches
 		randThatShitUp();
 	});
@@ -31,7 +36,7 @@
 	}
 
 	function randThatShitUp() {
-		var $fuckingTarget = $( '.fucking.description .sentence' );
+		var fuckingTarget = $( '.fucking.description .sentence' );
 		randFuckingArray = randomUpSomeShit( cussing, fuckAssNoun, fuckingDescriptions );
 		fuckingDescription = randFuckingArray[2];
 
@@ -39,8 +44,8 @@
 		$( '.insult h1.ass' ).html( randFuckingArray[0] + ' ' + randFuckingArray[1] );
 
 		// Swapping out the descriptions bitches
-		$fuckingTarget.html( randFuckingArray[2] );
-		$fuckingTarget.find( 'span' ).html( randFuckingArray[0] + ' ' + randFuckingArray[1] );
+		fuckingTarget.html( randFuckingArray[2] );
+		fuckingTarget.find( 'span' ).html( randFuckingArray[0] + ' ' + randFuckingArray[1] );
 	}
 
 	// On click bitches
