@@ -10,7 +10,6 @@
 	$.getJSON( "api/list_all_words.json", function( data ) {
 
 		//@todo some fucking tests/validation would nice here.
-		//console.log(data);
 
 		cussing = data.cussing;
 		fuckAssNoun = data.fuckAssNoun;
@@ -18,11 +17,11 @@
 
 	}).done(function(){
 
-		// show the damn button after the bitchin json request
+		// show the damn content after the bitchin json request completes
 		$( '#loading-shit' ).remove();
 		$( '#main-shit' ).show();
 
-		// On [finished] load[ing] bitches
+		// When finished load up bitches
 		randThatShitUp();
 	});
 
